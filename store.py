@@ -66,7 +66,7 @@ def get_product(id):
             result = cursor.fetchone()
             return json.dumps({'STATUS': 'SUCCESS', 'PRODUCT': result, 'CODE': 200})
     except Exception:
-        return json.dumps({'STATUS': 'ERROR', 'MSG': '', 'CODE': ''})
+        return json.dumps({'STATUS': 'ERROR', 'MSG': 'Internal error', 'CODE': 500})
 
 
 # Creating a Category (ignoring 'bad request' error as I accept any category name)
